@@ -12,7 +12,16 @@ def problema_miojo(tempo_miojo, amp_1, amp_2):
     if amp_1 < tempo_miojo or amp_2 < tempo_miojo or amp_1 == amp_2:
     	return -1
 
+    maiortempo = 0
+    if amp_1 < amp_2:
+    	diferenca = amp_2 - amp_1
+    	maiortempo = amp_2
+    else:
+    	diferenca = amp_1 - amp_2
+    	maiortempo = amp_1
 
+    if diferenca == tempo_miojo:
+    	return maiortempo
 
     return 0
  # 0 - nao e possivel
@@ -24,8 +33,8 @@ class ProblemaMiojoTest(unittest.TestCase):
         self.assertEqual(-1, problema_miojo(5, 3, 2))
     def test_argumentos_2(self):
     	self.assertEqual(-1, problema_miojo(5, 10, 10))
-    #def test_derradeiro(self)
-    #	self.assertEqual(-1, problema_miojo(5, 10, 10))
+    def test_derradeiro(self):
+    	self.assertEqual(7, problema_miojo(2, 5, 7))
 
 if __name__ == '__main__':
     unittest.main()
