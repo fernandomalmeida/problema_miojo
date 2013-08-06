@@ -38,8 +38,12 @@ class ProblemaMiojoTest(unittest.TestCase):
     	self.assertEqual(7, problema_miojo(2, 5, 7))
     def test_diferenca_trocada(self):
     	self.assertEqual(7, problema_miojo(2, 7, 5))
-    def test_derradeiro(self):
-    	self.assertEqual(10, problema_miojo(3, 5, 7))	
+    def test_do_site(self):
+    	self.assertEqual(10, problema_miojo(3, 5, 7))
+    def test_do_site_trocada(self):
+    	self.assertEqual(10, problema_miojo(3, 7, 5))
+    #def teste_sem_solucao(self):
+    #	self.assertEqual(0, problema_miojo(2, 4, 8))
 
 if __name__ == '__main__':
     unittest.main()
