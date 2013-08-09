@@ -6,6 +6,11 @@
 # Para executar os testes, chame o interpretador Python com esse arquivo como
 # parâmetro. Ex: python <caminho_do_arquivo>
 
+# Resultados possíveis do programa
+# 0		nao e possivel
+# -1	erro
+# > 0	possivel
+
 import unittest
 
 def problema_miojo_private(tempo_miojo, amp_1, amp_2, amp_1_original, amp_2_original):
@@ -32,10 +37,6 @@ def problema_miojo(tempo_miojo, amp_1, amp_2):
 	else:
 		return problema_miojo_private(tempo_miojo, amp_1, amp_2, amp_1, amp_2)
 
- # 0 - nao e possivel
- # -1 - erro
- # > 0 possivel
-
 class ProblemaMiojoTest(unittest.TestCase):
     def test_argumentos_1(self):
         self.assertEqual(-1, problema_miojo(5, 3, 2))
@@ -61,7 +62,8 @@ class ProblemaMiojoTest(unittest.TestCase):
     	self.assertEqual(-1, problema_miojo(0, 0, 0))
     def teste_30_50_60(self):
     	self.assertEqual(150, problema_miojo(30, 50, 60))
-    #def teste_2119_7963_22171(self):
+	#estouro da pilha de recursão
+	#def teste_2119_7963_22171(self):
     #	self.assertEqual(4037241, problema_miojo(2119, 7963, 22171))
 
 if __name__ == '__main__':
