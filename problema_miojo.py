@@ -18,12 +18,8 @@ def problema_miojo_private(tempo_miojo, amp_1, amp_2, amp_1_original, amp_2_orig
 		return 0
 	maiortempo = 0
 	if amp_1 > amp_2:
-		aux = amp_1
-		amp_1 = amp_2
-		amp_2 = aux
-		aux = amp_1_original
-		amp_1_original = amp_2_original
-		amp_2_original = aux
+		amp_1, amp_2 = amp_2, amp_1
+		amp_1_original, amp_2_original = amp_2_original, amp_1_original
 
 	diferenca = amp_2 - amp_1
 	maiortempo = amp_2
